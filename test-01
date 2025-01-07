@@ -1,0 +1,20 @@
+# Variables (edit these as needed)
+FILE-NAME="test-for-daily-streak-$(date +%Y%m%d)"
+FILE_NAME="test-01.txt"
+COMMIT_MSG="Maintaining GitHub streak - $(date)"
+
+# Create a new repository
+gh repo create $REPO_NAME --public --confirm
+
+# Navigate to the new repository
+cd $REPO_NAME
+
+# Add a simple file
+echo "Hello, GitHub Streak on $(date)!" > $FILE_NAME
+
+# Commit and push the file
+git add $FILE_NAME
+git commit -m "$COMMIT_MSG"
+git push -u origin main
+
+echo "Repository $REPO_NAME created and updated to maintain streak!"
